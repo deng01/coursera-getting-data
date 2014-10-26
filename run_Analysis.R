@@ -12,17 +12,17 @@ library(dplyr)
 merge.datasets <- function() {
 	
 	# Read in the data
-	training.x <- read.table("UCI HAR Dataset/train/X_train.txt")
-	training.y <- read.table("UCI HAR Dataset/train/y_train.txt")
-	training.subject <- read.table("UCI HAR Dataset/train/subject_train.txt")
+	train.x <- read.table("UCI HAR Dataset/train/X_train.txt")
+	train.y <- read.table("UCI HAR Dataset/train/y_train.txt")
+	train.subject <- read.table("UCI HAR Dataset/train/subject_train.txt")
 	test.x <- read.table("UCI HAR Dataset/test/X_test.txt")
 	test.y <- read.table("UCI HAR Dataset/test/y_test.txt")
 	test.subject <- read.table("UCI HAR Dataset/test/subject_test.txt")
 	
 	# Merge the data
-	x <- rbind(training.x, test.x)
-	y <- rbind(training.y, test.y)
-	subject <- rbind(training.subject, test.subject)
+	x <- rbind(train.x, test.x)
+	y <- rbind(train.y, test.y)
+	subject <- rbind(train.subject, test.subject)
 	
 	# Return the data
 	list(x=x, y=y, subject=subject)
